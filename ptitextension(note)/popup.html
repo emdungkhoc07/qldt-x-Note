@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>TKB x QLDT</title>
+  <link rel="stylesheet" href="PhongCachChung.css">
+  <style>
+    body {
+      width: 340px;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      box-sizing: border-box;
+      color: #1e293b;
+    }
+    .PopupHeader {
+      background-color: #b71c1c;
+      color: #ffffff;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .PopupTitle {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .PopupBadgeSession {
+      font-size: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .PopupContainer {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .NutMoTkbChinh {
+      background-color: #b71c1c;
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(183, 28, 28, 0.25);
+    }
+    .NutMoTkbChinh:hover {
+      background-color: #991b1b;
+    }
+    .PopupCard {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+    .PopupCardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .PopupCardTitle {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+    }
+    .PopupFooter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="PopupHeader">
+    <div class="PopupTitle">
+      <span>TKB x QLDT</span>
+    </div>
+    <span class="PopupBadgeSession">anti logout</span>
+  </div>
+
+  <div class="PopupContainer">
+    <!-- Nút điều hướng nhanh đến trang thời khóa biểu PTIT -->
+    <a id="NutMoTrangTkb" href="https://qldt.ptit.edu.vn/#/tkb-tuan" target="_blank" class="NutMoTkbChinh">
+      <span>Mở Thời Khóa Biểu PTIT</span>
+    </a>
+
+    <!-- Khối lời nhắc & báo thức -->
+    <div class="PopupCard">
+      <div class="PopupCardHeader">
+        <h4 class="PopupCardTitle">Lời nhắc (<span id="SoLuongLoiNhac">0</span>)</h4>
+      </div>
+      <div id="DanhSachLoiNhacNho" style="font-size: 12px; color: #475569;">Đang tải...</div>
+    </div>
+
+    <!-- Khối thời gian biểu hôm nay -->
+    <div class="PopupCard">
+      <div class="PopupCardHeader">
+        <h4 class="PopupCardTitle" id="TieuDeBieuDoPopup">Thời gian biểu hôm nay</h4>
+        <span id="PopupNgayHomNay" style="font-size: 11px; color: #64748b; font-weight: 500;"></span>
+      </div>
+      <div style="display: flex; justify-content: center; padding: 2px 0;">
+        <canvas id="CanvasBieuDoPopup" width="220" height="220" style="width: 200px; height: 200px;"></canvas>
+      </div>
+      <!-- Khung hình chữ nhật nhắc việc hiện tại trong popup -->
+      <div id="PopupNhacViecHienTai" class="KhungNhacViecHienTai" style="margin-top: 8px;"></div>
+    </div>
+
+    <!-- Footer sao lưu -->
+    <div class="PopupFooter">
+      <span style="font-size: 11px; color: #94a3b8;">v1.0 • TKB x QLDT</span>
+      <button id="NutSaoLuuDuLieuPopup" class="NutBamChung NutBamNho NutBamPhu">Sao lưu dữ liệu</button>
+    </div>
+  </div>
+
+  <script src="ThuVienTienIch.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

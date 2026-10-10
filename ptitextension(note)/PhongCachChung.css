@@ -1,0 +1,1162 @@
+/* ==========================================================================
+   Phong cách CSS chung cho tiện ích TKB x QLDT (Thời khóa biểu & Báo thức)
+   ========================================================================== */
+
+/* Nút bấm mở bảng điều khiển nổi ở góc màn hình */
+.NutMoBangDieuKhien {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999999;
+  background-color: #b71c1c;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 24px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  cursor: default;
+  box-shadow: 0 4px 14px rgba(183, 28, 28, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.NutMoBangDieuKhien:hover {
+  background-color: #991b1b;
+  transform: translateY(-1px);
+}
+
+/* Khung bảng điều khiển chính trượt ra từ bên trái màn hình */
+.BangDieuKhienChinh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 420px;
+  height: 100vh;
+  z-index: 999998;
+  background-color: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 13px;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+/* Nút toggle ở rìa phải bảng điều khiển với icon '<' */
+.NutToggleRiaPhai {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 52px;
+  background-color: #b71c1c;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000000;
+  padding: 0;
+  user-select: none;
+  transition: background-color 0.15s ease, width 0.15s ease, right 0.15s ease;
+}
+
+.NutToggleRiaPhai:hover {
+  background-color: #991b1b;
+  width: 28px;
+  right: -28px;
+}
+
+/* Phần tiêu đề đầu bảng điều khiển */
+.TieuDeBangDieuKhien {
+  background-color: #b71c1c;
+  color: #ffffff;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-right-radius: 16px;
+}
+
+.ChuTieuDeChinh {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.NutDongHeader {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: default;
+  transition: background-color 0.15s ease;
+  user-select: none;
+}
+
+.NutDongHeader:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Huy hiệu giữ phiên đăng nhập */
+.HuyHieuDangHoatDong {
+  background-color: #16a34a;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Thanh chuyển đổi các tab chức năng */
+.ThanhChonTab {
+  display: flex;
+  background-color: #f1f5f9;
+  padding: 4px 6px;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 4px;
+}
+
+.NutChonTab {
+  flex: 1;
+  padding: 8px 10px;
+  text-align: center;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: default;
+  user-select: none;
+}
+
+.NutChonTabDangChon {
+  color: #b71c1c;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-weight: 700;
+}
+
+/* Khung nội dung cho từng tab cuộn độc lập */
+.KhungNoiDungTab {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* Định kiểu các nút bấm dùng chung */
+.NutBamChung {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: default;
+  border: 1px solid transparent;
+  font-family: inherit;
+  box-sizing: border-box;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.NutBamChinh {
+  background-color: #b71c1c;
+  color: #ffffff;
+  border-color: #b71c1c;
+}
+
+.NutBamChinh:hover {
+  background-color: #991b1b;
+  border-color: #991b1b;
+}
+
+.NutBamPhu {
+  background-color: #ffffff;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+.NutBamPhu:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.NutBamNho {
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 6px;
+}
+
+.NutBamXoa {
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.NutBamXoa:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.NutBamThanhCong {
+  background-color: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
+}
+
+.NutBamCanhBao {
+  background-color: #ea580c;
+  color: #ffffff;
+  border-color: #ea580c;
+}
+
+.NutBamCanhBao:hover {
+  background-color: #c2410c;
+  border-color: #c2410c;
+}
+
+/* Hộp nhập liệu và lựa chọn dùng chung */
+.OTextInput {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: inherit;
+  box-sizing: border-box;
+  color: #1e293b;
+  background-color: #ffffff;
+}
+
+.OTextInput:focus {
+  outline: none;
+  border-color: #b71c1c;
+  box-shadow: 0 0 0 2px rgba(183, 28, 28, 0.12);
+}
+
+.OSelectChung {
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: inherit;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.OSelectChung:focus {
+  outline: none;
+  border-color: #b71c1c;
+}
+
+/* Khối thẻ bọc các nhóm chức năng */
+.KhoiNhomChucNang {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.TieuDeNhomChucNang {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 12px;
+  margin: 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Định dạng thanh thông báo thư mục lưu trữ */
+.DongThongTinThuMuc {
+  font-size: 11px;
+  color: #166534;
+  padding: 6px 10px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+}
+
+/* Bảng các nút màu nhanh cho nhãn thẻ */
+.KhungBangMauNhan {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.NutChonMauNhan {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  cursor: default;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #cbd5e1;
+  box-sizing: border-box;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.NutChonMauNhan:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px #b71c1c;
+}
+
+.NutChonMauNhanDangChon {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2.5px #b71c1c !important;
+}
+
+/* Thanh phân loại màu sắc cho các thẻ mẫu */
+.ThanhPhanLoaiMau {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 2px 0 6px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.NutLocMau {
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+  transition: all 0.12s ease;
+}
+
+.NutLocMau:hover {
+  border-color: #b71c1c;
+  color: #b71c1c;
+}
+
+.NutLocMauDangChon {
+  background: #b71c1c !important;
+  color: #ffffff !important;
+  border-color: #b71c1c !important;
+}
+
+.NutLocMauDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #cbd5e1;
+  cursor: default;
+  padding: 0;
+  user-select: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.NutLocMauDot:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px #b71c1c;
+}
+
+.NutLocMauDotDangChon {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 2.5px #0f172a !important;
+}
+
+/* Khung hiển thị danh sách thẻ mẫu dạng lưới hình vuông */
+.KhungDanhSachTheVuong {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 4px 2px;
+}
+
+/* Thẻ mẫu kéo thả dạng hình vuông */
+.TheLoiNhacItemVuong {
+  position: relative;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: grab;
+  user-select: none;
+  box-sizing: border-box;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.TheLoiNhacItemVuong:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.TheLoiNhacItemVuong.DangDuocKeo {
+  opacity: 0.45;
+  transform: scale(0.92);
+}
+
+.TheLoiNhacItemVuong .NutXoaTheVuong {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  border: none;
+  font-size: 11px;
+  line-height: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  z-index: 5;
+  padding: 0;
+}
+
+.TheLoiNhacItemVuong:hover .NutXoaTheVuong {
+  display: flex;
+}
+
+.TheLoiNhacItemVuong .NutXoaTheVuong:hover {
+  background: #ef4444;
+}
+
+.TheLoiNhacItemVuong .DauTheVuong {
+  padding: 3px 5px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 10.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.TheLoiNhacItemVuong .TieuDeTheVuong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.TheLoiNhacItemVuong .ThanTheVuong {
+  flex: 1;
+  padding: 3px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.TheLoiNhacItemVuong .MoTaTheVuong {
+  font-size: 9.5px;
+  color: #64748b;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.TheLoiNhacItemVuong .BadgePhutBao {
+  font-size: 8.5px;
+  font-weight: 700;
+  align-self: flex-end;
+  background: #f1f5f9;
+  padding: 1px 3px;
+  border-radius: 3px;
+  margin-top: 1px;
+}
+
+/* Thẻ thời khóa biểu ghim vào ô */
+.OCellChuaTheGhimTkb,
+td:has(> .NhacNhoGhimTrongTkb),
+td:has(.NhacNhoGhimTrongTkb),
+.OCellMoRongTkb.OCellChuaTheGhimTkb,
+.OCellMoRongTkb:has(.NhacNhoGhimTrongTkb) {
+  padding: 0 !important;
+  margin: 0 !important;
+  vertical-align: top !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+.OCellChuaTheGhimTkb:not(.OCellCoLichHocTruong) {
+  position: relative !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  height: inherit !important;
+}
+
+.OCellChuaTheGhimTkb:not(.OCellCoLichHocTruong) > :not(.KhungChuaTheGhimTrongO):not(.VatGiuChieuCaoTkb):not(.NhacNhoGhimTrongTkb):not(.DuongChiViTriTha) {
+  display: none !important;
+}
+
+/* Khung chứa các thẻ ghim tuyệt đối trong ô trống */
+.KhungChuaTheGhimTrongO {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  z-index: 1;
+  font-size: 11px !important;
+  line-height: normal !important;
+}
+
+.KhungChuaTheGhimTrongO .NhacNhoGhimTrongTkb {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.KhungChuaTheGhimTrongO .NhacNhoGhimTrongTkb:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Phần tử giữ chiều cao tối thiểu trong ô thời khóa biểu */
+.VatGiuChieuCaoTkb {
+  display: block !important;
+  width: 100% !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Khi ô có môn học của trường */
+.OCellChuaTheGhimTkb.OCellCoLichHocTruong {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  padding: 2px !important;
+}
+
+.OCellChuaTheGhimTkb.OCellCoLichHocTruong .NhacNhoGhimTrongTkb {
+  height: auto !important;
+  min-height: auto !important;
+  margin-top: 3px !important;
+  border-radius: 4px !important;
+  flex: none !important;
+}
+
+/* Thẻ thời khóa biểu to kín toàn bộ ô khung thời gian */
+.NhacNhoGhimTrongTkb {
+  margin: 0 !important;
+  padding: 6px 8px !important;
+  background-color: #b71c1c;
+  color: #ffffff;
+  border: none !important;
+  border-radius: 0 !important;
+  font-size: 11px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  gap: 2px !important;
+  text-align: left;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  cursor: grab !important;
+  user-select: none;
+  overflow: hidden !important;
+}
+
+.NhacNhoGhimTrongTkb:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35) !important;
+}
+
+.NhacNhoGhimTrongTkb.DangDuocKeo {
+  opacity: 0.4;
+  outline: 2px dashed #ffffff !important;
+  outline-offset: -2px;
+}
+
+/* Đường viền hoạt ảnh trực quan chỉ vị trí sẽ thả vào */
+.DuongChiViTriTha {
+  height: 4px;
+  background: linear-gradient(90deg, #b71c1c 0%, #ff5252 50%, #b71c1c 100%);
+  border-radius: 4px;
+  margin: 2px 0 !important;
+  box-shadow: 0 0 10px rgba(183, 28, 28, 0.85);
+  position: relative;
+  pointer-events: none !important;
+  z-index: 99;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 0 0 4px !important;
+}
+
+.DuongChiViTriTha,
+.DuongChiViTriTha * {
+  pointer-events: none !important;
+}
+
+.DuongChiViTriTha::before {
+  content: 'Thả vào đây';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #b71c1c;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none !important;
+}
+
+.NhacNhoGhimTrongTkb * {
+  user-select: none !important;
+}
+
+body.DangKeoTheGhimTkb .NhacNhoGhimTrongTkb:not(.DangDuocKeo),
+body.DangKeoTheGhimTkb .NhacNhoGhimTrongTkb:not(.DangDuocKeo) * {
+  pointer-events: none !important;
+}
+
+/* Tên thẻ thời khóa biểu */
+.TieuDeLoiNhacGhim {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+  line-height: 1.3 !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Chi tiết nội dung */
+.NoiDungLoiNhacGhim {
+  font-size: 10px !important;
+  color: rgba(255, 255, 255, 0.94) !important;
+  line-height: 1.35 !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+}
+
+/* Dòng chứa số giờ thông báo ở góc dưới bên phải */
+.DongThoiGianGocPhaiGhim {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  width: 100% !important;
+  margin-top: auto !important;
+  padding-top: 2px !important;
+  box-sizing: border-box !important;
+}
+
+.ThoiGianNoTinNhanGhim {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  background-color: rgba(0, 0, 0, 0.28) !important;
+  padding: 1px 5px !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-sizing: border-box !important;
+  margin-left: auto !important;
+}
+
+/* Hiệu ứng kéo thẻ vào bảng điều khiển để xóa */
+.BangDieuKhienNhanXoaThe {
+  box-shadow: 6px 0 20px rgba(239, 68, 68, 0.25) !important;
+  border-right: 3px dashed #ef4444 !important;
+}
+
+/* Hiệu ứng khi kéo rê phần tử vào ô thời khóa biểu */
+body.DangKeoTheGhimTkb .OTkbSanSangNhan {
+  outline: 2px dashed #b71c1c !important;
+  background-color: #fef2f2 !important;
+}
+
+/* Tiêu đề thông tin ngày hôm nay */
+.KhungTieuDeHomNay {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+}
+
+.ChuNgayHomNay {
+  font-size: 13px;
+  font-weight: 700;
+  color: #b71c1c;
+}
+
+/* Khung vẽ biểu đồ tròn thời gian biểu 24h */
+.KhungChuaBieuDo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.CanvasBieuDoTron {
+  width: 220px;
+  height: 220px;
+}
+
+/* Khung hình chữ nhật nổi bật nhắc rõ hiện tại đang là giờ của công việc/thẻ nào */
+.KhungNhacViecHienTai {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.HopTrangThaiHienTai {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #b71c1c;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.HopTrangThaiDangDienRa {
+  background: linear-gradient(135deg, #ffffff 0%, #fffbfa 100%);
+  box-shadow: 0 3px 10px rgba(183, 28, 28, 0.12);
+}
+
+.HopTrangThaiNghiNgoi {
+  border-left-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.DongTrangThaiDau {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.BadgeDangDienRa {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #b71c1c;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.DotNhayTrangThai {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  animation: DotNhayPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes DotNhayPulse {
+  0% { transform: scale(0.8); opacity: 0.4; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.4; }
+}
+
+.ThoiGianConLai {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ea580c;
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.GioHienTaiBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.BadgeNghiNgoi {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  background: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.TenViecHienTai {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.DongChiTietHienTai {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.BadgeKhungGio {
+  font-size: 11px;
+  font-weight: 600;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.BadgeLoaiHienTai {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.GhiChuHienTai {
+  font-size: 11.5px;
+  color: #475569;
+  line-height: 1.35;
+}
+
+/* Thanh tiến trình mini */
+.ThanhTienDoKhung {
+  width: 100%;
+  height: 4px;
+  background-color: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.ThanhTienDoChay {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* Khối sự kiện tiếp theo */
+.HopViecTiepTheo {
+  margin-top: 4px;
+  padding: 6px 8px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Danh sách lịch trình hôm nay theo timeline */
+.DanhSachLichTrinhHomNayCuon {
+  max-height: 190px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.DongLichHomNayItem {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 7px 10px;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.15s ease;
+}
+
+.DongLichHomNayItem:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.DongLichDangDienRa {
+  border-color: #b71c1c !important;
+  background-color: #fffbfb !important;
+  box-shadow: 0 2px 8px rgba(183, 28, 28, 0.12) !important;
+}
+
+.VachMauLichHomNay {
+  width: 4px;
+  height: 28px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.ThongTinLichHomNay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.TenLichHomNay {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ChiTietLichHomNay {
+  font-size: 10.5px;
+  color: #64748b;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.BadgeDangHoc {
+  font-size: 9px;
+  font-weight: 700;
+  background: #fef2f2;
+  color: #b71c1c;
+  border: 1px solid #fecaca;
+  padding: 1px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.BadgeLoaiLich {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Định dạng các hàng thời khóa biểu mở rộng */
+.DongThoiKhoaBieuMoRong {
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.DongThoiKhoaBieuMoRong td {
+  border: 1px solid #dee2e6;
+}
+
+.ONhanThoiGianMoRong {
+  background-color: #b71c1c !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  width: 4.5% !important;
+  overflow: hidden !important;
+  padding: 6px 4px !important;
+}
+
+.OCellMoRongTkb {
+  width: 13% !important;
+  padding: 4px !important;
+  min-height: 38px !important;
+  vertical-align: middle !important;
+  background-color: #fafafa;
+}
+
+.OCellMoRongTkb:hover {
+  background-color: #f1f8e9;
+}
+
+/* Khung thông báo nổi góc phải */
+.ThongBaoNoiToastGocPhai {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999999;
+  width: 340px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #b71c1c;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: inherit;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+.DongTieuDeToastGocPhai {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ChuTieuDeToastGocPhai {
+  font-size: 13px;
+  font-weight: 700;
+  color: #b71c1c;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ChuNoiDungToastGocPhai {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #475569;
+  margin: 0;
+}
+
+.NutDongToastGocPhai {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: default;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.NutDongToastGocPhai:hover {
+  color: #b71c1c;
+  background-color: #fef2f2;
+}
+
+/* Ẩn các hàng thời gian lẻ sau 22h bị phân mảnh */
+.DongLeBiAn {
+  display: none !important;
+}
+
+/* Áp dụng con trỏ chuột mặc định */
+.NutMoBangDieuKhien,
+.BangDieuKhienChinh,
+.BangDieuKhienChinh *,
+.OCellChuaTheGhimTkb,
+.OCellChuaTheGhimTkb * {
+  cursor: default !important;
+}
+
+/* Con trỏ cầm nắm khi kéo thả thẻ */
+.TheLoiNhacItemVuong,
+.NhacNhoGhimTrongTkb {
+  cursor: grab !important;
+}
+
+.TheLoiNhacItemVuong.DangDuocKeo,
+.NhacNhoGhimTrongTkb.DangDuocKeo {
+  cursor: grabbing !important;
+}
+
+/* Thanh cuộn hiện đại thanh mảnh */
+.KhungNoiDungTab::-webkit-scrollbar,
+.KhungDanhSachTheVuong::-webkit-scrollbar,
+.DanhSachCongViecCuon::-webkit-scrollbar {
+  width: 5px;
+}
+
+.KhungNoiDungTab::-webkit-scrollbar-track,
+.KhungDanhSachTheVuong::-webkit-scrollbar-track,
+.DanhSachCongViecCuon::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.KhungNoiDungTab::-webkit-scrollbar-thumb,
+.KhungDanhSachTheVuong::-webkit-scrollbar-thumb,
+.DanhSachCongViecCuon::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.KhungNoiDungTab::-webkit-scrollbar-thumb:hover,
+.KhungDanhSachTheVuong::-webkit-scrollbar-thumb:hover,
+.DanhSachCongViecCuon::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -1,0 +1,70 @@
+{
+  "manifest_version": 3,
+  "name": "TKB x QLDT - Tiện Ích Thời Khóa Biểu & Quản Lý Thời Gian PTIT",
+  "version": "1.0.0",
+  "description": "Kéo thả lời nhắc và báo thức thông minh vào thời khóa biểu PTIT, anti logout chống hết hạn phiên làm việc và biểu đồ tròn thời gian biểu 24h.",
+  "icons": {
+    "16": "bieu_tuong/icon16.png",
+    "48": "bieu_tuong/icon48.png",
+    "128": "bieu_tuong/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TKB x QLDT",
+    "default_icon": {
+      "16": "bieu_tuong/icon16.png",
+      "48": "bieu_tuong/icon48.png",
+      "128": "bieu_tuong/icon128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "*://qldt.ptit.edu.vn/*"
+  ],
+  "background": {
+    "service_worker": "NenTangDichVu.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://qldt.ptit.edu.vn/*"
+      ],
+      "js": [
+        "GiuDangNhap.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://qldt.ptit.edu.vn/*"
+      ],
+      "js": [
+        "ThuVienTienIch.js",
+        "GiaoDienNoi.js"
+      ],
+      "css": [
+        "PhongCachChung.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "am_thanh_bao_thuc.wav",
+        "PhongCachChung.css",
+        "GiuDangNhap.js",
+        "bieu_tuong/icon.jpg",
+        "icon.jpg"
+      ],
+      "matches": [
+        "*://qldt.ptit.edu.vn/*"
+      ]
+    }
+  ]
+}
